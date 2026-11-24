@@ -11,7 +11,7 @@ description: >
   for a game; a tutorial, coach mark, spotlight, or first-session flow; a
   win, lose, level-complete, reward, chest, or level-up screen; button feel,
   "juice", or reveal animation on a UI screen; "no frames" mobile mockups.
-version: 3.0.0
+version: 3.1.0
 user-invocable: true
 ---
 
@@ -159,6 +159,31 @@ build, with a one-line note on what changed and why.
 the plan didn't anticipate, that gap goes back through pass 2 before it
 ships — the checklist is a gate, not a one-time glance.
 
+**Pass 3 — Render and look.** The player sees pixels, not source. Render
+the built screen at the game's real mobile viewport (the engine's editor,
+game view, or web preview) and screenshot it. Then answer:
+
+- What do I see first, and is that the most important thing on this screen?
+- What is the one next action, and does it read as primary?
+- Does every state the screen can be in hold up — the long item name, the
+  six-digit balance, the empty list, the locked slot — not only the
+  default?
+
+Fix only what the look found, render again with the same viewport, and
+report what changed. If you can't render, say so at the top of your answer
+and name what went unchecked.
+
+## Critiquing an existing screen
+
+When asked to review a screen rather than design one, render it first
+(Pass 3's questions), then walk the checklist and rank each finding by its
+cost to the player: **blocks or misleads**, then **slows down**, then
+**looks careless**. Each finding names the problem, where it is, and the
+fix. Deliver the ranked report and stop; change files only once the user
+picks which fixes to apply. A fix that touches a piece shared across
+screens (the game's standard button, panel, or currency readout) is named
+as shared, so every screen using it changes together.
+
 ## Anti-slop checklist
 
 Adapted from generic web/marketing anti-slop guidance for mobile game
@@ -194,9 +219,16 @@ screens specifically — most rows exist because a shortcut that reads as
 | **Monetization & content** | |
 | Three IAP/battle-pass tiers styled like a generic SaaS pricing table | Offers shown as game objects — chest, pass banner, bundle card — in the game's own visual language |
 | Placeholder/stock imagery standing in for real gameplay | Real captured gameplay art, even rough — never lorem-ipsum visuals |
+| **Layout stability** | |
+| A button that resizes when its label swaps (Claim → Claimed, Buy → Owned) or a spinner replaces it | Sized to its longest label; spinner centered over the hidden label |
+| Currency and score readouts that jitter as digits tick up | Tabular (fixed-width) numerals and a slot sized for the largest realistic value |
+| Selection that adds bold weight, a new border, or a new icon and shoves neighbours | Selection shown through fill or a border that is always present (transparent at rest) |
+| Tab or step content of different heights making the screen jump | Reserved height, or content swapped inside a fixed-height container |
 | **Loading & motion** | |
 | Blank screen or spinner-only while content loads | Skeleton placeholders in the game's own surface tone |
 | Scattered animation with no single orchestrated sequence | One deliberate motion moment per transition (screen-open, reward-reveal); everything else quiet |
+| Panels and popups that close as slowly as they open | Close in about two thirds of the open time — the player is waiting to get back to play |
+| Motion that ignores the OS reduce-motion setting | Transitions cut or shortened under reduce motion; the reward still reads without the animation |
 
 Dropped from the source anti-slop list as out of scope for a game screen
 (text/copy or legal concerns, not layout): em dashes, "it's not X, it's Y"
@@ -212,7 +244,8 @@ policy.
   richer is available
 - The anti-slop checklist above as a hard guardrail for game screens
 - Touch-first interaction-state taste (press/active/long-press over hover)
-- The plan-then-critique gate before a screen ships
+- The plan-then-critique gate before a screen ships, and the rendered look
+  after it's built
 - Tutorial and FTUE overlay design, and the first-session time budget
 - UI feedback: press feel, feedback tiers, results-screen reveal sequence,
   popup queues, chest and pack reveals
