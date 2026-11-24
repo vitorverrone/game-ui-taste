@@ -12,7 +12,7 @@ plan-then-critique gate against anti-slop checklists before anything is built.
 
 | File | Covers |
 |---|---|
-| [`SKILL.md`](SKILL.md) | Touch-first rules, safe area and reachability, the structure pass, palette/type derivation from the game's world, the plan → critique → build process, and the main anti-slop checklist |
+| [`SKILL.md`](SKILL.md) | Touch-first rules, safe area and reachability, the structure pass, palette/type derivation from the game's world, the plan → critique → build → render process, ranked critique of existing screens, and the main anti-slop checklist |
 | [`references/ftue.md`](references/ftue.md) | First-session time budget, step anatomy, spotlight / hand pointer / arrow / bubble hints, hint timing, input gating, skip, progressive unlocks, FTUE checklist |
 | [`references/reward-and-juice.md`](references/reward-and-juice.md) | Feedback tiers (frequent, occasional, rare), press and easing defaults, the results-screen reveal sequence, lose screens, popup queues, chest and pack reveals, accessibility, reward checklist |
 
@@ -68,7 +68,8 @@ Art of Screenshake", and these skills:
 [`omer-metin/skills-for-antigravity`](https://github.com/omer-metin/skills-for-antigravity)
 (Apache-2.0), [`pbakaus/impeccable`](https://github.com/pbakaus/impeccable)
 (Apache-2.0), [`felipebasurto/unslop-ui`](https://github.com/felipebasurto/unslop-ui)
-(MIT), and the `ftue` and `game-juice` skills published on skills.lc.
+(MIT), [`diego3g/craft`](https://github.com/diego3g/craft) (MIT), and the
+`ftue` and `game-juice` skills published on skills.lc.
 
 ## License
 
