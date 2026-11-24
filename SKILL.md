@@ -11,7 +11,7 @@ description: >
   for a game; a tutorial, coach mark, spotlight, or first-session flow; a
   win, lose, level-complete, reward, chest, or level-up screen; button feel,
   "juice", or reveal animation on a UI screen; "no frames" mobile mockups.
-version: 3.1.0
+version: 3.2.0
 user-invocable: true
 ---
 
@@ -131,6 +131,16 @@ are the source of truth; don't re-derive them.
    pass across the whole game, not just this screen.
 
 ## Process: plan, then critique, then build
+
+**Pass 0 — Directions.** Runs when this screen sets a look nothing in the
+game has fixed yet: no style guide, no sibling screens to inherit from, or
+an approved redesign. Propose 2–3 directions, each grounded in the game's
+world and each differing in composition and density as well as color and
+type character. For each, give one line on what the player sees first, its
+signature move, and the trade-off it pays. Stop until the user picks one;
+Pass 1 plans the chosen direction. Skip straight to Pass 1 when a style
+guide or sibling screens already set the look, or the user hands you the
+choice.
 
 **Pass 1 — Design plan.** Before touching a single pixel, write down:
 
